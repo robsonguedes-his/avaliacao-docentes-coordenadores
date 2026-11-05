@@ -271,6 +271,28 @@ td.n{font-variant-numeric:tabular-nums}
 @media(max-width:700px){.brow{grid-template-columns:1fr 70px}.brow .bl{grid-column:1/-1}}
 .wrap.tq td:nth-child(2){min-width:360px}.wrap.tq td:nth-child(1){min-width:120px}
 
+/* ===== tabelas que cabem na largura (sem rolagem, sem corte na impressão) ===== */
+.wrap{overflow:visible}
+.wrap table{width:100%;table-layout:auto}
+.wrap th,.wrap td{padding:5px 6px}
+td.n,th.n{white-space:normal}
+.wrap th{font-size:10.5px;line-height:1.2;overflow-wrap:anywhere}
+.wrap td{font-size:12px;overflow-wrap:anywhere}
+.wrap.tq td:nth-child(1),.wrap.tq td:nth-child(2){min-width:0}
+.wrap.tq th:nth-child(1){width:12%}.wrap.tq th:nth-child(2){width:25%}.wrap.tq th:nth-child(11){width:12%}
+.wrap.tq th:nth-child(n+3):nth-child(-n+10){width:6.5%}
+.wrap .chip{white-space:normal;display:inline-block;line-height:1.2;text-align:center}
+.rtab th,.rtab td{white-space:normal}
+@media(max-width:760px){.wrap{overflow:auto}}
+@media print{
+.wrap{overflow:visible!important;break-inside:auto}
+.wrap table{font-size:9.5px!important}
+.wrap th{font-size:8.5px!important}.wrap td{font-size:9.5px!important}
+.wrap th,.wrap td{padding:3px 4px!important}
+tr{break-inside:avoid}
+}
+.wrap.tq td:nth-child(1){overflow-wrap:break-word}
+
 /* ===== TEMA CLARO (padrão) ===== */
 #th{display:inline-block!important}
 :root[data-theme=light]{color-scheme:light;--bg:#eef4fb;--card:#fff;--ink:#14213a;--mut:#5a6578;--line:#d6e0ee;--acc:#022442;--ok:#13804a;--ad:#9a6a06;--at:#c0261b;--okb:#dff4e8;--adb:#fdf1cc;--atb:#fde3df;--c1:#2f6db5;--c2:#d9731a;--c3:#7a4fb0;--sh:0 8px 28px rgba(2,36,66,.10)}
@@ -571,7 +593,7 @@ function docStandalone(k,nome,auto){
   const body=document.getElementById('doc-'+k).cloneNode(true);body.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));body.querySelectorAll('.noprint').forEach(e=>e.remove());
   body.querySelectorAll('select').forEach(sl=>{const t=document.createElement('span');t.textContent=sl.value;sl.replaceWith(t)});
   const st=[...document.querySelectorAll('style')].map(x=>x.textContent).join('\n');
-  return '<!doctype html><html lang="pt-BR" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+DOCS[k][0]+' · '+esc(tc(nome))+'</title><style>'+st+'\nbody::before,body::after{display:none!important}body{background:#fff!important;color:#14213a!important;padding:16px}.mc{max-width:900px;margin:0 auto}.ed{outline:none!important}.box,.meta,.card{box-shadow:none!important;background:#fff!important}@page{margin:10mm}.wrap{overflow:visible!important}table{font-size:10.5px!important;width:100%}th,td{padding:4px 5px!important}</style></head><body><div class="mc acao-doc">'+body.innerHTML+'</div>'+(auto?'<script>window.onload=function(){setTimeout(function(){window.print()},500)}<\/script>':'')+'</body></html>'}
+  return '<!doctype html><html lang="pt-BR" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+DOCS[k][0]+' · '+esc(tc(nome))+'</title><style>'+st+'\nbody::before,body::after{display:none!important}body{background:#fff!important;color:#14213a!important;padding:16px}.mc{max-width:900px;margin:0 auto}.ed{outline:none!important}.box,.meta,.card{box-shadow:none!important;background:#fff!important}@page{margin:10mm}.wrap{overflow:visible!important}table{font-size:10px!important;width:100%;table-layout:auto}th{font-size:9px!important;line-height:1.2}th,td{padding:3px 4px!important;overflow-wrap:anywhere;white-space:normal!important}tr{break-inside:avoid}.wrap .chip{white-space:normal}</style></head><body><div class="mc acao-doc">'+body.innerHTML+'</div>'+(auto?'<script>window.onload=function(){setTimeout(function(){window.print()},500)}<\/script>':'')+'</body></html>'}
 function printDoc(k,nome){
   let w=null;try{w=window.open('','_blank')}catch(e){}
   if(w&&w.document){w.document.open();w.document.write(docStandalone(k,nome,true));w.document.close();return}
