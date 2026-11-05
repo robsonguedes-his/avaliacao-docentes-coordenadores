@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Avaliação Docente F2 e EM</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap">
+<!doctype html><html lang="pt-BR" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Avaliação Docente F2 e EM</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap">
 <style>
 /* Identidade visual herdada do painel original (variáveis, cartões, tema claro/escuro) */
 :root{--bg:#f6f4ef;--card:#fff;--ink:#1d2433;--mut:#667085;--line:#e4e0d6;--acc:#1f3a5f;--ok:#1f7a4d;--ad:#9a7b12;--at:#b42318;--okb:#e4f3ea;--adb:#faf1d2;--atb:#fde7e4;--c1:#2f6db5;--c2:#c9731a;--c3:#7a4fb0;--gold:#c9a227;--silver:#8a94a3;--bronze:#b0703a}
@@ -251,6 +251,27 @@ svg[role=img][aria-label^="Nota"]{overflow:visible;transform-origin:center;anima
 @keyframes notaPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(244,235,212,0))}45%{transform:scale(1.09);filter:drop-shadow(0 0 9px rgba(244,235,212,.45))}60%{transform:scale(.99)}}
 .pcard svg[role=img]:hover{animation-duration:.8s}
 }
+
+/* ===== tema claro (padrão) — identidade Heavenly em versão clara ===== */
+@media screen{
+:root[data-theme=light]{color-scheme:light;--bg:#eef4fb;--card:#fff;--ink:#14213a;--mut:#5a6578;--line:#d6e0ee;--acc:#022442;--ok:#13804a;--ad:#9a6a06;--at:#c0261b;--okb:#dff4e8;--adb:#fdf1cc;--atb:#fde3df;--c1:#2f6db5;--c2:#d9731a;--c3:#7a4fb0;--sh:0 10px 30px rgba(2,36,66,.12)}
+:root[data-theme=light] body{background:#eef4fb}
+:root[data-theme=light] body::before{background:radial-gradient(40vmax 40vmax at 8% -8%,rgba(85,28,37,.13),transparent 70%),radial-gradient(34vmax 34vmax at 100% 30%,rgba(19,128,90,.13),transparent 70%),radial-gradient(30vmax 30vmax at 40% 110%,rgba(47,109,181,.14),transparent 70%),linear-gradient(135deg,#f8fbff 0%,#e9f1fb 60%,#e2edfa 100%)}
+:root[data-theme=light] body::after{filter:invert(1) sepia(1) hue-rotate(185deg) saturate(2.5);opacity:.08}
+:root[data-theme=light] header,:root[data-theme=light] nav.main{background:rgba(255,255,255,.88)}
+:root[data-theme=light] header h1,:root[data-theme=light] header small,:root[data-theme=light] header .btn,:root[data-theme=light] header button{color:#14213a}
+:root[data-theme=light] header small{color:#5a6578}
+:root[data-theme=light] .tag{background:var(--adb);color:var(--ad)}
+:root[data-theme=light] .tag.at{background:var(--atb);color:var(--at)}
+:root[data-theme=light] button,:root[data-theme=light] .btn{background:var(--card)}
+:root[data-theme=light] button.on,:root[data-theme=light] .seg button.on,:root[data-theme=light] .tabs button.on{background:#551c25;color:#f4ebd4;border-color:#551c25}
+:root[data-theme=light] .seg{background:rgba(2,36,66,.05)}
+:root[data-theme=light] .box,:root[data-theme=light] .pcard,:root[data-theme=light] .pc,:root[data-theme=light] .kpis div{background:rgba(255,255,255,.92)}
+:root[data-theme=light] .hero{color:#f4ebd4}:root[data-theme=light] .hero h2,:root[data-theme=light] .hero b{color:#fff}
+:root[data-theme=light] input,:root[data-theme=light] select{background:#fff;color:var(--ink);border:1px solid var(--line)}
+:root[data-theme=light] select option{background:#fff;color:#14213a}
+}
+@media screen{#th{display:inline-block}}
 @media screen and (prefers-reduced-motion:reduce){body::after{animation:none}svg[role=img][aria-label^="Nota"]{animation:none}}
 @media print{body::before,body::after{display:none}svg[role=img]{animation:none!important;filter:none!important}}
 </style></head><body>
@@ -304,8 +325,8 @@ function fontes(p){
 }
 const chip=(t,k)=>'<span class="pill '+(k||'na')+'">'+esc(t)+'</span>';
 // ---------- tema / navegação
-(function(){const th=$('#th');const k='hv_f2em_tema';let t=null;try{t=localStorage.getItem(k)}catch(e){}
- if(t)document.documentElement.dataset.theme=t;th.onclick=()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}}})();
+(function(){const th=$('#th');const k='aval-tema';let t=null;try{t=localStorage.getItem(k)}catch(e){}
+ if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;th.onclick=()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}}})();
 const S={view:'prof',sel:null,tab:'resumo',fu:({'asa-norte':'Asa Norte','high':'High (Lago Sul)'})[new URLSearchParams(location.search).get('un')]||'',fs:({f2:'F2',em:'EM'})[new URLSearchParams(location.search).get('seg')]||'',fq:'',sort:'nome',lv:'cards'};
 function render(){const v=$('#view');
  v.innerHTML=S.view==='prof'?vProf():S.view==='diag'?vDiag():vMet();
