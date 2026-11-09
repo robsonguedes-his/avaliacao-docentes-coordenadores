@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Unidade Asa Norte · Avaliações Heavenly</title>
+<!doctype html><html lang="pt-BR" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Avaliações Heavenly · Unidade Asa Norte · Diretoria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@700;800&display=swap">
@@ -269,7 +269,7 @@ html{scroll-behavior:smooth}
           docentes e coordenadores
           <svg viewBox="0 0 24 24"><path d="M7 20h10M12 20v-9"/><path d="M12 11a5 5 0 0 0-5-5H4a5 5 0 0 0 5 5Z"/><path d="M12 13a5 5 0 0 1 5-5h3a5 5 0 0 1-5 5Z"/></svg>
         </h1>
-        <p class="sub fadeup" style="--i:1">Veja a avaliação dos docentes de Kinder, F1 e F2 e os resultados dos coordenadores da Asa Norte.</p>
+        <p class="sub fadeup" style="--i:1">Veja a avaliação dos docentes de Kinder, F1 e F2 e os resultados dos coordenadores da unidade Asa Norte.</p>
         <div class="wiz fadeup" style="--i:2" id="escolha" aria-live="polite"></div>
       </div>
 
@@ -293,11 +293,14 @@ html{scroll-behavior:smooth}
 
 <main class="info">
 <div class="wm3" aria-hidden="true"></div>
-<section id="metodo"><h2>Como foi calculado</h2><p class="lead">Cada painel tem sua metodologia. Em todos eles, o botão “Como foi calculado” mostra a conta passo a passo.</p>
-<div class="grid3"><div class="box"><b>Kinder e F1 (K2 ao 5º ano)</b><span>Índice Final = média entre a nota da coordenação (ajustada pelo rigor de cada avaliadora) e a das famílias, menos perdas quando as fontes divergem muito entre si e da autoavaliação. Semáforo: vermelho abaixo de 85, amarelo de 85 a 89,9 e verde a partir de 90.</span></div><div class="box"><b>F2 (6º ao 9º ano)</b><span>Índice Final com a nota da coordenação (ajustada) e a voz de alunos e famílias, mais perdas por desalinhamento e pela autoavaliação. Semáforo: vermelho abaixo de 85, amarelo de 85 a 89,9 e verde a partir de 90. Mostra também PDI SMART, roteiro de feedback e relatório de cada professor.</span></div><div class="box"><b>Coordenadores</b><span>Percepção dos professores em NPS (de −100 a +100), % favorável e média de 1 a 5, com ranking por função, recortes por bloco, radar comparativo e análise individual. Aparecem os coordenadores lotados na Asa Norte. Os professores avaliadores não são identificados.</span></div></div>
+<section id="metodo"><h2>Como foi calculado</h2><p class="lead">Cada segmento tem sua metodologia. Em todos os painéis, o botão “Como foi calculado” mostra a conta passo a passo.</p>
+<div class="grid3">
+<div class="box"><b>Kinder e F1 (K2 ao 5º ano)</b><span>Índice Final = média entre a nota da coordenação (ajustada pelo rigor de cada avaliadora) e a das famílias, menos perdas quando as fontes divergem muito entre si e da autoavaliação. Semáforo: vermelho abaixo de 85, amarelo de 85 a 89,9 e verde a partir de 90.</span></div>
+<div class="box"><b>F2 (6º ao 9º ano)</b><span>Índice Final com a nota da coordenação (ajustada) e a voz de alunos e famílias, mais perdas por desalinhamento e pela autoavaliação. Mesmo semáforo. Mostra também PDI SMART, roteiro de feedback e relatório de cada professor.</span></div>
+<div class="box"><b>Coordenadores</b><span>Percepção dos professores em NPS (de −100 a +100), % favorável e média de 1 a 5, com ranking por função, recortes por bloco, radar comparativo e análise individual. Os professores avaliadores não são identificados.</span></div></div>
 <div class="fm">Segmentos: Kinder (K2 a K4) · F1 (K5 ao 5º ano) · F2 (6º ao 9º ano)</div></section>
 <section id="ajuda"><h2>Ajuda</h2><p class="lead">Dúvidas frequentes sobre os painéis.</p>
-<details><summary>Qual painel eu abro?</summary><p>Kinder e F1, F2 ou Coordenadores da Asa Norte. Cada cartão abre o painel com os dados da Asa Norte.</p></details>
+<details><summary>Qual painel eu abro?</summary><p>Kinder e F1, ou F2.  Coordenadores da unidade Asa Norte. Cada cartão abre o painel correspondente.</p></details>
 <details><summary>Como os segmentos são divididos?</summary><p>Kinder: K2 a K4. F1: K5 ao 5º ano. F2: 6º ao 9º ano.</p></details>
 <details><summary>Quem pode ver os resultados?</summary><p>Os resultados são confidenciais e destinados à diretoria e à coordenação.</p></details>
 <details><summary>Por que alguns professores ou coordenadores não têm nota?</summary><p>É preciso um mínimo de avaliadores e de respondentes por fonte para a nota ser considerada confiável. Quem foi desligado não aparece nas listas, mas as notas continuam nas médias.</p></details>
@@ -324,43 +327,48 @@ html{scroll-behavior:smooth}
   var svg=function(k){return '<svg viewBox="0 0 24 24">'+ICON[k]+'</svg>'};
   var SEG={k:{n:'Kinder',r:'K2 a K4',c:'var(--sk)',u:'Asa Norte'},f1:{n:'Fundamental I (F1)',r:'K5 ao 5º ano',c:'var(--sf1)',u:'Asa Norte'},f2:{n:'Fundamental II (F2)',r:'6º ao 9º ano',c:'var(--sf2)',u:'Asa Norte'}};
   var TIP={k:'K',f1:'F1',f2:'F2'};
-  var ROOT=[{id:'asa',hl:["k", "f1", "f2"]}];var COORD={id:'coord'};var CHILD={asa:[{t:"Kinder e F1",d:"K2 a K4 e K5 ao 5º ano",ic:'k',cl:'u1',tags:["k", "f1"],hl:["k", "f1"],href:"aval.docentes.html"},{t:"F2",d:"6º ao 9º ano",ic:'f2',cl:'u3',tags:["f2"],hl:["f2"],href:"docentesf2em.html"},{t:'Coordenadores',d:"Coordenadores lotados na Asa Norte",ic:'co',cl:'u4',hl:[],href:"aval.coord.html"}]};var NAME={asa:"Asa Norte"};
-  var wiz=document.getElementById('escolha'),map=document.getElementById('map'),cur='asa';
+  var ROOT=[{id:'u',hl:['k', 'f1', 'f2']}];
+  var COORD={id:'coord'};
+  var CHILD={u:[{t:'Kinder e F1',d:'K2 a K4 e K5 ao 5º ano',ic:'k',cl:'u1',tags:['k', 'f1'],hl:['k', 'f1'],href:'aval.docentes.html'},{t:'F2',d:'6º ao 9º ano',ic:'f2',cl:'u3',tags:['f2'],hl:['f2'],href:'docentesf2em.html'},{t:'Coordenadores',d:'Coordenadores de Kinder, F1 e F2',ic:'co',cl:'u4',hl:[],href:'aval.coord.html'}]};
+  var NAME={u:'Asa Norte'};
+  var wiz=document.getElementById('escolha'),map=document.getElementById('map'),cur='u';
   function drawMap(hl){
-    var ks=["k", "f1", "f2"];
+    var ks=['k', 'f1', 'f2'];
     map.className='map'+(hl&&hl.length?' sel':'');
-    map.innerHTML='<h2>Segmentos das avaliações</h2><p>Passe o mouse ou escolha uma opção para ver onde cada segmento é avaliado.</p>'+ks.map(function(k){var s=SEG[k];return '<div class="srow'+(hl&&hl.indexOf(k)>-1?' hl':'')+'" style="--c:'+s.c+'"><span class="si">'+svg(k)+'</span><div><b>'+s.n+'</b><span>'+s.r+'</span></div><em>'+s.u+'</em></div>'}).join('')+'<div class="srow coordr" style="--c:#e59ab0"><span class="si">'+svg('co')+'</span><div><b>Coordenadores</b><span>Todos os segmentos</span></div><em>Asa Norte</em></div>';
+    map.innerHTML='<h2>Segmentos das avaliações</h2><p>Passe o mouse ou escolha uma opção para ver onde cada segmento é avaliado.</p>'+ks.map(function(k){var s=SEG[k];return '<div class="srow'+(hl&&hl.indexOf(k)>-1?' hl':'')+'" style="--c:'+s.c+'"><span class="si">'+svg(k)+'</span><div><b>'+s.n+'</b><span>'+s.r+'</span></div><em>'+s.u+'</em></div>'}).join('')+'<div class="srow coordr" style="--c:#e59ab0"><span class="si">'+svg('co')+'</span><div><b>Coordenadores</b><span>Segmentos da unidade</span></div><em>Asa Norte</em></div>';
   }
   function bubble(o,i,kind){
     var tags=(o.tags||[]).map(function(t){return '<i style="--c:'+SEG[t].c+'">'+TIP[t]+'</i>'}).join('');
     return '<button class="bub '+o.cl+'" style="--k:'+i+'" data-'+kind+'="'+i+'" type="button"><span class="ic">'+svg(o.ic)+'</span><span><b>'+o.t+'</b><small>'+o.d+'</small>'+(tags?'<span class="tags">'+tags+'</span>':'')+'</span><svg class="go" viewBox="0 0 24 24">'+(kind==='r'?'<path d="m9 6 6 6-6 6"/>':'<path d="M5 12h14m-6-6 6 6-6 6"/>')+'</svg></button>';
   }
   function draw(){
-    var h='<p class="q">Unidade Asa Norte · escolha a avaliação</p><div class="bubbles">'+CHILD[cur].map(function(o,i){return bubble(o,i,'c')}).join('')+'</div><p class="hint" id="hint">Cada cartão abre o painel com os dados da Asa Norte.</p>';
-    wiz.innerHTML=h;drawMap(ROOT[0].hl);
+     var h='<p class="q">Unidade Asa Norte · escolha o segmento</p><div class="bubbles">'+CHILD.u.map(function(o,i){return bubble(o,i,'c')}).join('')+'</div><p class="hint" id="hint">Cada cartão abre o painel com os dados de Asa Norte.</p>';
+     wiz.innerHTML=h;
+    drawMap(['k', 'f1', 'f2']);
   }
   function setHint(t){var e=document.getElementById('hint');if(e)e.innerHTML=t}
   wiz.addEventListener('click',function(e){
     var b=e.target.closest('button');if(!b)return;
-    if(b.hasAttribute('data-home')){cur=null;draw();return}
-    if(b.dataset.r!==undefined){var o=b.dataset.r==='3'?COORD:ROOT[+b.dataset.r];cur=o.id;draw();var f=wiz.querySelector('.bub');if(f)f.focus({preventScroll:true});return}
+    if(b.hasAttribute('data-home')){return}
+    
     if(b.dataset.c!==undefined){var c=CHILD[cur][+b.dataset.c];b.classList.add('load');go(c.href)}
   });
   function hover(e){
     var b=e.target.closest&&e.target.closest('.bub');if(!b){return}
-    var o=b.dataset.r!==undefined?(b.dataset.r==='3'?COORD:ROOT[+b.dataset.r]):CHILD[cur][+b.dataset.c];
+    var o=CHILD.u[+b.dataset.c];
     drawMap(o.hl);
-    if(b.dataset.r!==undefined)setHint('<b>'+o.t+'</b>: '+o.d+'.');else setHint('Abrir o painel de <b>'+o.t+'</b>'+(cur==='coord'?'':' da unidade '+NAME[cur])+'.');
+    setHint('Abrir o painel de <b>'+o.t+'</b> da unidade Asa Norte.');
   }
   wiz.addEventListener('mouseover',hover);wiz.addEventListener('focusin',hover);
-  wiz.addEventListener('mouseleave',function(){drawMap(cur&&cur!=='coord'?ROOT.filter(function(r){return r.id===cur})[0].hl:[])});
-    draw();
+  wiz.addEventListener('mouseleave',function(){drawMap(['k', 'f1', 'f2'])});
+  document.addEventListener('keydown',function(e){});
+  draw();
   /* menu: Painel -> seletor; demais -> seção */
   document.querySelectorAll('[data-nav]').forEach(function(el){el.addEventListener('click',function(e){
     e.preventDefault();var k=el.getAttribute('data-nav');setMenu(false);
     var tg=k==='topo'?document.body:(k==='painel'?document.getElementById('escolha'):document.getElementById(k));
     setTimeout(function(){(k==='topo'?window.scrollTo({top:0,behavior:'smooth'}):tg.scrollIntoView({behavior:'smooth',block:'center'}))},sh.contains(el)?250:0);
-    if(k==='painel'){draw()}
+    
   })});
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('go')})});
@@ -373,7 +381,7 @@ html{scroll-behavior:smooth}
 })();
 </script>
 <script>
-(function(){var r=document.documentElement,K='aval-tema',b=document.getElementById('thm'),l=document.getElementById('thl');
+(function(){var r=document.documentElement,K='aval-tema-unidade',b=document.getElementById('thm'),l=document.getElementById('thl');
 try{var t=localStorage.getItem(K);if(t==='dark'||t==='light')r.dataset.theme=t}catch(e){}
 function lab(){var d=r.dataset.theme==='dark';if(l)l.textContent=d?'Claro':'Escuro';if(b)b.setAttribute('aria-pressed',d?'true':'false')}
 lab();if(b)b.onclick=function(){var n=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem(K,n)}catch(e){}lab()}})();
