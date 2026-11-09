@@ -328,19 +328,19 @@ html{scroll-behavior:smooth}
   var SEG={k:{n:'Kinder',r:'K2 a K4',c:'var(--sk)',u:'Asa Norte · Kinder'},f1:{n:'Fundamental I (F1)',r:'K5 ao 5º ano',c:'var(--sf1)',u:'Asa Norte · Kinder'},f2:{n:'Fundamental II (F2)',r:'6º ao 9º ano',c:'var(--sf2)',u:'Asa Norte · High'},em:{n:'Ensino Médio',r:'1ª, 2ª e 3ª série',c:'var(--sem)',u:'High'}};
   var TIP={k:'K',f1:'F1',f2:'F2',em:'Médio'};
   var ROOT=[
-    {id:'asa',t:'Unidade Asa Norte',d:'Kinder, F1 e F2',ic:'unit',cl:'u1',hl:['k','f1','f2']},
-    {id:'kinder',t:'Unidade Kinder',d:'Kinder e F1',ic:'unit',cl:'u2',hl:['k','f1']},
-    {id:'high',t:'Unidade High',d:'F2 e Médio',ic:'unit',cl:'u3',hl:['f2','em']}];
+    {id:'asa',t:'Unidade Asa Norte',d:'Kinder, F1 e F2',ic:'unit',cl:'u1',hl:['k','f1','f2'],href:'asa-norte/'},
+    {id:'kinder',t:'Unidade Kinder',d:'Kinder e F1',ic:'unit',cl:'u2',hl:['k','f1'],href:'kinder/'},
+    {id:'high',t:'Unidade High',d:'F2 e Médio',ic:'unit',cl:'u3',hl:['f2','em'],href:'high/'}];
   var COORD={id:'coord',t:'Coordenadores',d:'Resultado geral e por unidade',ic:'co',cl:'u4',hl:[]};
   var CHILD={
-    asa:[{t:'Kinder e F1',d:'K2 a K4 e K5 ao 5º ano',ic:'k',cl:'u1',tags:['k','f1'],hl:['k','f1'],href:'aval.docentes.html?un=asa-norte'},
-         {t:'F2',d:'6º ao 9º ano',ic:'f2',cl:'u3',tags:['f2'],hl:['f2'],href:'docentesf2em.html?un=asa-norte&seg=f2'}],
-    kinder:[{t:'Kinder e F1',d:'K2 a K4 e K5 ao 5º ano',ic:'k',cl:'u2',tags:['k','f1'],hl:['k','f1'],href:'aval.docentes.html?un=kinder'}],
-    high:[{t:'F2 e Médio',d:'6º ao 9º ano e 1ª a 3ª série',ic:'f2',cl:'u3',tags:['f2','em'],hl:['f2','em'],href:'docentesf2em.html?un=high'}],
+    asa:[{t:'Kinder e F1',d:'K2 a K4 e K5 ao 5º ano',ic:'k',cl:'u1',tags:['k','f1'],hl:['k','f1'],href:'asa-norte/aval.docentes.html?from=..%2Findex.html'},
+         {t:'F2',d:'6º ao 9º ano',ic:'f2',cl:'u3',tags:['f2'],hl:['f2'],href:'asa-norte/docentesf2em.html?from=..%2Findex.html'}],
+    kinder:[{t:'Kinder e F1',d:'K2 a K4 e K5 ao 5º ano',ic:'k',cl:'u2',tags:['k','f1'],hl:['k','f1'],href:'kinder/aval.docentes.html?from=..%2Findex.html'}],
+    high:[{t:'F2 e Médio',d:'6º ao 9º ano e 1ª a 3ª série',ic:'f2',cl:'u3',tags:['f2','em'],hl:['f2','em'],href:'high/docentesf2em.html?from=..%2Findex.html'}],
     coord:[{t:'Geral',d:'Todas as unidades juntas',ic:'ge',cl:'u1',hl:[],href:'aval.coord.html'},
-           {t:'Kinder',d:'Coordenadores da unidade Kinder',ic:'unit',cl:'u2',hl:[],href:'aval.coord.html?un=kinder'},
-           {t:'Asa Norte',d:'Coordenadores da unidade Asa Norte',ic:'unit',cl:'u1',hl:[],href:'aval.coord.html?un=asa-norte'},
-           {t:'High',d:'Coordenadores da unidade High',ic:'unit',cl:'u3',hl:[],href:'aval.coord.html?un=high'}]};
+           {t:'Kinder',d:'Coordenadores da unidade Kinder',ic:'unit',cl:'u2',hl:[],href:'kinder/aval.coord.html?from=..%2Findex.html'},
+           {t:'Asa Norte',d:'Coordenadores da unidade Asa Norte',ic:'unit',cl:'u1',hl:[],href:'asa-norte/aval.coord.html?from=..%2Findex.html'},
+           {t:'High',d:'Coordenadores da unidade High',ic:'unit',cl:'u3',hl:[],href:'high/aval.coord.html?from=..%2Findex.html'}]};
   var NAME={asa:'Asa Norte',kinder:'Kinder',high:'High',coord:'Coordenadores'};
   var wiz=document.getElementById('escolha'),map=document.getElementById('map'),cur=null;
   function drawMap(hl){
@@ -366,7 +366,7 @@ html{scroll-behavior:smooth}
   wiz.addEventListener('click',function(e){
     var b=e.target.closest('button');if(!b)return;
     if(b.hasAttribute('data-home')){cur=null;draw();return}
-    if(b.dataset.r!==undefined){var o=b.dataset.r==='3'?COORD:ROOT[+b.dataset.r];cur=o.id;draw();var f=wiz.querySelector('.bub');if(f)f.focus({preventScroll:true});return}
+    if(b.dataset.r!==undefined){var o=b.dataset.r==='3'?COORD:ROOT[+b.dataset.r];if(o.href){b.classList.add('load');go(o.href);return}cur=o.id;draw();var f=wiz.querySelector('.bub');if(f)f.focus({preventScroll:true});return}
     if(b.dataset.c!==undefined){var c=CHILD[cur][+b.dataset.c];b.classList.add('load');go(c.href)}
   });
   function hover(e){
