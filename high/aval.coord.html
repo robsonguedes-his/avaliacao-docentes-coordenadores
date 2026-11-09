@@ -726,5 +726,5 @@ render();
 </script></body></html>
 <script>
 /* "← Início" volta para a página de onde o usuário veio (capa geral ou página da unidade) */
-(function(){try{var f=new URLSearchParams(location.search).get('from');if(f&&['index.html','asa-norte.html','kinder-lago-sul.html','high.html'].indexOf(f)>-1){document.querySelectorAll('a[href="index.html"]').forEach(function(a){a.setAttribute('href',f)})}}catch(e){}})();
+(function(){try{var ok=['index.html','index-coordenadores.html'],q=new URLSearchParams(location.search).get('from'),K='aval-from:'+location.pathname.replace(/[^\/]*$/,'');if(q&&ok.indexOf(q)>-1){try{sessionStorage.setItem(K,q)}catch(e){}}var f=q&&ok.indexOf(q)>-1?q:null;if(!f){try{f=sessionStorage.getItem(K)}catch(e){}}if(ok.indexOf(f)<0)f='index.html';document.querySelectorAll('a[href="index.html"]').forEach(function(a){a.setAttribute('href',f)})}catch(e){}})();
 </script>
